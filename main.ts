@@ -92,18 +92,16 @@ function startMaze () {
         if (laserR > 150) {
             OLED.writeStringNewLine("First Step was C")
             firstStep = "C"
-            OLED.writeStringNewLine("LaserR: " + convertToText(laserR))
             lightSpace("A", "Off")
             lightSpace("B", "Off")
             lightSpace("C", "Step")
             lightSpace("E", "Indicate")
             awaitingStep = false
         } else if (laserC > 150) {
-            OLED.writeStringNewLine("LaserC: " + convertToText(laserC))
+        	
         } else if (laserL > 150) {
             firstStep = "B"
             OLED.writeStringNewLine("First Step was B")
-            OLED.writeStringNewLine("LaserL: " + convertToText(laserL))
             lightSpace("A", "Off")
             lightSpace("C", "Off")
             lightSpace("B", "Step")
@@ -120,7 +118,6 @@ function startMaze () {
             laserC = pins.analogReadPin(AnalogPin.P1)
             laserL = pins.analogReadPin(AnalogPin.P2)
             if (laserR > 150) {
-                OLED.writeStringNewLine("LaserR: " + convertToText(laserR))
                 OLED.writeStringNewLine("Second Step was D")
                 secondStep = "D"
                 lightSpace("B", "Off")
@@ -129,9 +126,9 @@ function startMaze () {
                 lightSpace("F", "Indicate")
                 awaitingStep = false
             } else if (laserC > 150) {
-                OLED.writeStringNewLine("LaserC: " + convertToText(laserC))
+            	
             } else if (laserL > 150) {
-                OLED.writeStringNewLine("LaserL: " + convertToText(laserL))
+            	
             }
         }
     } else if (firstStep == "C") {
@@ -140,11 +137,10 @@ function startMaze () {
             laserC = pins.analogReadPin(AnalogPin.P1)
             laserL = pins.analogReadPin(AnalogPin.P2)
             if (laserR > 150) {
-                OLED.writeStringNewLine("LaserR: " + convertToText(laserR))
+            	
             } else if (laserC > 150) {
-                OLED.writeStringNewLine("LaserC: " + convertToText(laserC))
+            	
             } else if (laserL > 150) {
-                OLED.writeStringNewLine("LaserL: " + convertToText(laserL))
                 OLED.writeStringNewLine("Second Step was E")
                 secondStep = "E"
                 lightSpace("C", "Off")
@@ -164,7 +160,6 @@ function startMaze () {
             laserC = pins.analogReadPin(AnalogPin.P1)
             laserL = pins.analogReadPin(AnalogPin.P2)
             if (laserR > 150) {
-                OLED.writeStringNewLine("LaserR: " + convertToText(laserR))
                 OLED.writeStringNewLine("Thrid Step was F")
                 thirdStep = "F"
                 lightSpace("D", "Off")
@@ -173,7 +168,6 @@ function startMaze () {
                 lightSpace("H", "Indicate")
                 awaitingStep = false
             } else if (laserC > 150) {
-                OLED.writeStringNewLine("LaserC: " + convertToText(laserC))
                 OLED.writeStringNewLine("Thrid Step was E")
                 thirdStep = "E"
                 lightSpace("D", "Off")
@@ -182,7 +176,7 @@ function startMaze () {
                 lightSpace("G", "Indicate")
                 awaitingStep = false
             } else if (laserL > 150) {
-                OLED.writeStringNewLine("LaserL: " + convertToText(laserL))
+            	
             }
         }
     } else if (secondStep == "E") {
@@ -191,9 +185,8 @@ function startMaze () {
             laserC = pins.analogReadPin(AnalogPin.P1)
             laserL = pins.analogReadPin(AnalogPin.P2)
             if (laserR > 150) {
-                OLED.writeStringNewLine("LaserR: " + convertToText(laserR))
+            	
             } else if (laserC > 150) {
-                OLED.writeStringNewLine("LaserC: " + convertToText(laserC))
                 OLED.writeStringNewLine("Thrid Step was D")
                 thirdStep = "D"
                 lightSpace("E", "Off")
@@ -202,7 +195,6 @@ function startMaze () {
                 lightSpace("F", "Indicate")
                 awaitingStep = false
             } else if (laserL > 150) {
-                OLED.writeStringNewLine("LaserL: " + convertToText(laserL))
                 OLED.writeStringNewLine("Third Step was G")
                 thirdStep = "G"
                 lightSpace("D", "Off")
@@ -226,11 +218,10 @@ function startMaze () {
             laserC = pins.analogReadPin(AnalogPin.P1)
             laserL = pins.analogReadPin(AnalogPin.P2)
             if (laserR > 150) {
-                OLED.writeStringNewLine("LaserR: " + convertToText(laserR))
+            	
             } else if (laserC > 150) {
-                OLED.writeStringNewLine("LaserC: " + convertToText(laserC))
+            	
             } else if (laserL > 150) {
-                OLED.writeStringNewLine("LaserL: " + convertToText(laserL))
                 OLED.writeStringNewLine("Fourth Step was H")
                 fourthStep = "H"
                 lightSpace("D", "Off")
@@ -246,11 +237,10 @@ function startMaze () {
             laserC = pins.analogReadPin(AnalogPin.P1)
             laserL = pins.analogReadPin(AnalogPin.P2)
             if (laserR > 150) {
-                OLED.writeStringNewLine("LaserR: " + convertToText(laserR))
+            	
             } else if (laserC > 150) {
-                OLED.writeStringNewLine("LaserC: " + convertToText(laserC))
+            	
             } else if (laserL > 150) {
-                OLED.writeStringNewLine("LaserL: " + convertToText(laserL))
                 OLED.writeStringNewLine("Fourth Step was G")
                 fourthStep = "G"
                 lightSpace("E", "Off")
@@ -266,7 +256,6 @@ function startMaze () {
             laserC = pins.analogReadPin(AnalogPin.P1)
             laserL = pins.analogReadPin(AnalogPin.P2)
             if (laserR > 150) {
-                OLED.writeStringNewLine("LaserR: " + convertToText(laserR))
                 OLED.writeStringNewLine("Fourth Step was F")
                 fourthStep = "F"
                 lightSpace("D", "Off")
@@ -274,9 +263,9 @@ function startMaze () {
                 lightSpace("H", "Indicate")
                 awaitingStep = false
             } else if (laserC > 150) {
-                OLED.writeStringNewLine("LaserC: " + convertToText(laserC))
+            	
             } else if (laserL > 150) {
-                OLED.writeStringNewLine("LaserL: " + convertToText(laserL))
+            	
             }
         }
     } else if (thirdStep == "G") {
@@ -285,7 +274,6 @@ function startMaze () {
             laserC = pins.analogReadPin(AnalogPin.P1)
             laserL = pins.analogReadPin(AnalogPin.P2)
             if (laserR > 150) {
-                OLED.writeStringNewLine("LaserR: " + convertToText(laserR))
                 OLED.writeStringNewLine("Fourth Step was I")
                 fourthStep = "I"
                 lightSpace("G", "Off")
@@ -293,9 +281,9 @@ function startMaze () {
                 lightSpace("H", "Indicate")
                 awaitingStep = false
             } else if (laserC > 150) {
-                OLED.writeStringNewLine("LaserC: " + convertToText(laserC))
+            	
             } else if (laserL > 150) {
-                OLED.writeStringNewLine("LaserL: " + convertToText(laserL))
+            	
             }
         }
     }
@@ -312,16 +300,14 @@ function startMaze () {
             laserC = pins.analogReadPin(AnalogPin.P1)
             laserL = pins.analogReadPin(AnalogPin.P2)
             if (laserR > 150) {
-                OLED.writeStringNewLine("LaserR: " + convertToText(laserR))
+            	
             } else if (laserC > 150) {
-                OLED.writeStringNewLine("LaserC: " + convertToText(laserC))
                 OLED.writeStringNewLine("Fifth Step was I")
                 fifthStep = "I"
                 lightSpace("H", "Off")
                 lightSpace("I", "Step")
                 awaitingStep = false
             } else if (laserL > 150) {
-                OLED.writeStringNewLine("LaserL: " + convertToText(laserL))
                 awaitingStep = false
             }
         }
@@ -331,7 +317,6 @@ function startMaze () {
             laserC = pins.analogReadPin(AnalogPin.P1)
             laserL = pins.analogReadPin(AnalogPin.P2)
             if (laserR > 150) {
-                OLED.writeStringNewLine("LaserR: " + convertToText(laserR))
                 OLED.writeStringNewLine("Fifth Step was I")
                 fifthStep = "I"
                 lightSpace("G", "Off")
@@ -339,9 +324,9 @@ function startMaze () {
                 lightSpace("H", "Indicate")
                 awaitingStep = false
             } else if (laserC > 150) {
-                OLED.writeStringNewLine("LaserC: " + convertToText(laserC))
+            	
             } else if (laserL > 150) {
-                OLED.writeStringNewLine("LaserL: " + convertToText(laserL))
+            	
             }
         }
     } else if (fourthStep == "F") {
@@ -350,13 +335,10 @@ function startMaze () {
             laserC = pins.analogReadPin(AnalogPin.P1)
             laserL = pins.analogReadPin(AnalogPin.P2)
             if (laserR > 150) {
-                OLED.writeStringNewLine("LaserR: " + convertToText(laserR))
                 awaitingStep = false
             } else if (laserC > 150) {
-                OLED.writeStringNewLine("LaserC: " + convertToText(laserC))
                 awaitingStep = false
             } else if (laserL > 150) {
-                OLED.writeStringNewLine("LaserL: " + convertToText(laserL))
                 OLED.writeStringNewLine("Fifth Step was H")
                 fifthStep = "H"
                 lightSpace("F", "Off")
@@ -371,16 +353,15 @@ function startMaze () {
             laserC = pins.analogReadPin(AnalogPin.P1)
             laserL = pins.analogReadPin(AnalogPin.P2)
             if (laserR > 150) {
-                OLED.writeStringNewLine("LaserR: " + convertToText(laserR))
+            	
             } else if (laserC > 150) {
-                OLED.writeStringNewLine("LaserC: " + convertToText(laserC))
                 OLED.writeStringNewLine("Fifth Step was H")
                 fifthStep = "H"
                 lightSpace("I", "Off")
                 lightSpace("H", "Step")
                 awaitingStep = false
             } else if (laserL > 150) {
-                OLED.writeStringNewLine("LaserL: " + convertToText(laserL))
+            	
             }
         }
     }
@@ -395,16 +376,15 @@ function startMaze () {
                 laserC = pins.analogReadPin(AnalogPin.P1)
                 laserL = pins.analogReadPin(AnalogPin.P2)
                 if (laserR > 150) {
-                    OLED.writeStringNewLine("LaserR: " + convertToText(laserR))
+                	
                 } else if (laserC > 150) {
-                    OLED.writeStringNewLine("LaserC: " + convertToText(laserC))
                     OLED.writeStringNewLine("Sixth Step was H")
                     sixthStep = "H"
                     lightSpace("I", "Off")
                     lightSpace("H", "Step")
                     awaitingStep = false
                 } else if (laserL > 150) {
-                    OLED.writeStringNewLine("LaserL: " + convertToText(laserL))
+                	
                 }
             }
         }
@@ -415,16 +395,15 @@ function startMaze () {
                 laserC = pins.analogReadPin(AnalogPin.P1)
                 laserL = pins.analogReadPin(AnalogPin.P2)
                 if (laserR > 150) {
-                    OLED.writeStringNewLine("LaserR: " + convertToText(laserR))
+                	
                 } else if (laserC > 150) {
-                    OLED.writeStringNewLine("LaserC: " + convertToText(laserC))
                     OLED.writeStringNewLine("Sixth Step was I")
                     sixthStep = "I"
                     lightSpace("H", "Off")
                     lightSpace("I", "Step")
                     awaitingStep = false
                 } else if (laserL > 150) {
-                    OLED.writeStringNewLine("LaserL: " + convertToText(laserL))
+                	
                 }
             }
         }
