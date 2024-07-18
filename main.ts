@@ -76,20 +76,20 @@ function lightSpace (Space: string, Effect: string) {
         }
     }
 }
-// sixth step was I
-// sixth step was H
 function startMaze () {
     lightSpace("A", "Step")
     lightSpace("B", "Indicate")
     lightSpace("C", "Indicate")
+    lightSpace("H", "Off")
+    lightSpace("I", "Off")
     awaitingStep = true
-    OLED.writeStringNewLine("Awaiting First Step")
     basic.pause(300)
     while (awaitingStep) {
+        basic.pause(20)
         laserR = pins.analogReadPin(AnalogPin.P0)
         laserC = pins.analogReadPin(AnalogPin.P1)
         laserL = pins.analogReadPin(AnalogPin.P2)
-        if (laserR > 150) {
+        if (laserR < 5) {
             OLED.writeStringNewLine("First Step was C")
             firstStep = "C"
             lightSpace("A", "Off")
@@ -109,13 +109,13 @@ function startMaze () {
     }
     basic.pause(300)
     awaitingStep = true
-    OLED.writeStringNewLine("Awaiting Second Step")
     if (firstStep == "B") {
         while (awaitingStep) {
+            basic.pause(20)
             laserR = pins.analogReadPin(AnalogPin.P0)
             laserC = pins.analogReadPin(AnalogPin.P1)
             laserL = pins.analogReadPin(AnalogPin.P2)
-            if (laserR > 150) {
+            if (laserR < 5) {
                 OLED.writeStringNewLine("Second Step was D")
                 secondStep = "D"
                 lightSpace("B", "Off")
@@ -127,6 +127,7 @@ function startMaze () {
         }
     } else if (firstStep == "C") {
         while (awaitingStep) {
+            basic.pause(30)
             laserR = pins.analogReadPin(AnalogPin.P0)
             laserC = pins.analogReadPin(AnalogPin.P1)
             laserL = pins.analogReadPin(AnalogPin.P2)
@@ -143,13 +144,13 @@ function startMaze () {
     }
     basic.pause(300)
     awaitingStep = true
-    OLED.writeStringNewLine("Awaiting Third Step")
     if (secondStep == "D") {
         while (awaitingStep) {
+            basic.pause(20)
             laserR = pins.analogReadPin(AnalogPin.P0)
             laserC = pins.analogReadPin(AnalogPin.P1)
             laserL = pins.analogReadPin(AnalogPin.P2)
-            if (laserR > 150) {
+            if (laserR < 5) {
                 OLED.writeStringNewLine("Thrid Step was F")
                 thirdStep = "F"
                 lightSpace("D", "Off")
@@ -169,6 +170,7 @@ function startMaze () {
         }
     } else if (secondStep == "E") {
         while (awaitingStep) {
+            basic.pause(20)
             laserR = pins.analogReadPin(AnalogPin.P0)
             laserC = pins.analogReadPin(AnalogPin.P1)
             laserL = pins.analogReadPin(AnalogPin.P2)
@@ -193,13 +195,9 @@ function startMaze () {
     }
     basic.pause(300)
     awaitingStep = true
-    OLED.writeStringNewLine("Awaiting Fourth Step")
-    // third step was F
-    // third step was E
-    // third step was D
-    // third step was G
     if (thirdStep == "F") {
         while (awaitingStep) {
+            basic.pause(20)
             laserR = pins.analogReadPin(AnalogPin.P0)
             laserC = pins.analogReadPin(AnalogPin.P1)
             laserL = pins.analogReadPin(AnalogPin.P2)
@@ -215,6 +213,7 @@ function startMaze () {
         }
     } else if (thirdStep == "E") {
         while (awaitingStep) {
+            basic.pause(20)
             laserR = pins.analogReadPin(AnalogPin.P0)
             laserC = pins.analogReadPin(AnalogPin.P1)
             laserL = pins.analogReadPin(AnalogPin.P2)
@@ -230,10 +229,11 @@ function startMaze () {
         }
     } else if (thirdStep == "D") {
         while (awaitingStep) {
+            basic.pause(20)
             laserR = pins.analogReadPin(AnalogPin.P0)
             laserC = pins.analogReadPin(AnalogPin.P1)
             laserL = pins.analogReadPin(AnalogPin.P2)
-            if (laserR > 150) {
+            if (laserR < 5) {
                 OLED.writeStringNewLine("Fourth Step was F")
                 fourthStep = "F"
                 lightSpace("D", "Off")
@@ -244,10 +244,11 @@ function startMaze () {
         }
     } else if (thirdStep == "G") {
         while (awaitingStep) {
+            basic.pause(20)
             laserR = pins.analogReadPin(AnalogPin.P0)
             laserC = pins.analogReadPin(AnalogPin.P1)
             laserL = pins.analogReadPin(AnalogPin.P2)
-            if (laserR > 150) {
+            if (laserR < 5) {
                 OLED.writeStringNewLine("Fourth Step was I")
                 fourthStep = "I"
                 lightSpace("G", "Off")
@@ -259,13 +260,9 @@ function startMaze () {
     }
     basic.pause(300)
     awaitingStep = true
-    OLED.writeStringNewLine("Awaiting Fifth Step")
-    // fourth step was H
-    // fourth step was G
-    // fourth step was F
-    // fourth step was I
     if (fourthStep == "H") {
         while (awaitingStep) {
+            basic.pause(20)
             laserR = pins.analogReadPin(AnalogPin.P0)
             laserC = pins.analogReadPin(AnalogPin.P1)
             laserL = pins.analogReadPin(AnalogPin.P2)
@@ -281,10 +278,11 @@ function startMaze () {
         }
     } else if (fourthStep == "G") {
         while (awaitingStep) {
+            basic.pause(20)
             laserR = pins.analogReadPin(AnalogPin.P0)
             laserC = pins.analogReadPin(AnalogPin.P1)
             laserL = pins.analogReadPin(AnalogPin.P2)
-            if (laserR > 150) {
+            if (laserR < 5) {
                 OLED.writeStringNewLine("Fifth Step was I")
                 fifthStep = "I"
                 lightSpace("G", "Off")
@@ -295,6 +293,7 @@ function startMaze () {
         }
     } else if (fourthStep == "F") {
         while (awaitingStep) {
+            basic.pause(20)
             laserR = pins.analogReadPin(AnalogPin.P0)
             laserC = pins.analogReadPin(AnalogPin.P1)
             laserL = pins.analogReadPin(AnalogPin.P2)
@@ -309,6 +308,7 @@ function startMaze () {
         }
     } else if (fourthStep == "I") {
         while (awaitingStep) {
+            basic.pause(20)
             laserR = pins.analogReadPin(AnalogPin.P0)
             laserC = pins.analogReadPin(AnalogPin.P1)
             laserL = pins.analogReadPin(AnalogPin.P2)
@@ -323,11 +323,10 @@ function startMaze () {
     }
     basic.pause(300)
     awaitingStep = true
-    OLED.writeStringNewLine("Awaiting Sixth Step")
-    // fifth step was I
     if (fifthStep == "I") {
         if (!(fourthStep == "H")) {
             while (awaitingStep) {
+                basic.pause(20)
                 laserR = pins.analogReadPin(AnalogPin.P0)
                 laserC = pins.analogReadPin(AnalogPin.P1)
                 laserL = pins.analogReadPin(AnalogPin.P2)
@@ -343,6 +342,7 @@ function startMaze () {
     } else if (fifthStep == "H") {
         if (!(fourthStep == "I")) {
             while (awaitingStep) {
+                basic.pause(20)
                 laserR = pins.analogReadPin(AnalogPin.P0)
                 laserC = pins.analogReadPin(AnalogPin.P1)
                 laserL = pins.analogReadPin(AnalogPin.P2)
@@ -383,10 +383,14 @@ pins.setAudioPinEnabled(false)
 OLED.init(128, 64)
 OLED.writeStringNewLine("barf")
 pins.digitalWritePin(DigitalPin.P5, 1)
-let strip = Connected.create(Connected.DigitalRJPin.O6, 10, Connected.NeoPixelMode.RGB)
-let strip2 = Connected.create(Connected.DigitalRJPin.O7, 10, Connected.NeoPixelMode.RGB)
-strip.setBrightness(50)
-strip2.setBrightness(50)
+pins.digitalWritePin(DigitalPin.P9, 1)
+let strip = Connected.create(Connected.DigitalRJPin.O13, 20, Connected.NeoPixelMode.RGB)
+strip.showRainbow(1, 360)
+strip.setBrightness(100)
+basic.pause(5000)
+let strip2 = Connected.create(Connected.DigitalRJPin.W15, 10, Connected.NeoPixelMode.RGB)
+strip.setBrightness(5)
+strip2.setBrightness(5)
 stripA1 = strip2.range(8, 2)
 stripA2 = strip.range(8, 2)
 stripB = strip2.range(6, 2)
@@ -397,6 +401,14 @@ stripF = strip2.range(2, 2)
 stripG = strip.range(2, 2)
 stripH = strip2.range(0, 2)
 stripI = strip.range(0, 2)
+for (let index = 0; index < 1; index++) {
+    Kong.setServoAngel(Kong.ServoList.S0, 45)
+    Kong.ksetMotorSpeed(Kong.MotorList.M1, 10)
+    basic.pause(5000)
+    Kong.setServoAngel(Kong.ServoList.S0, 118)
+    Kong.ksetMotorSpeed(Kong.MotorList.M1, 0)
+    basic.pause(1000)
+}
 for (let index = 0; index < 4; index++) {
     OLED.clear()
     startMaze()
